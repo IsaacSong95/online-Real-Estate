@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "se";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>search</h2>
+<table class="table">
+    <tr>
+        <thead>Suburb</thead>
+        <thead>Location</thead>
+        <thead>Number of Rooms</thead>
+        <thead>Floor Area</thead>
+        <thead>Land Area</thead>
+        <thead>RV</thead>
+        <thead>Email</thead>
+        <thead>Property Type</thead>
+    </tr>
+    
+     @foreach (var i in Model)
+            {
+         <tr>
+             <td>@i.Suburb</td>
+             <td>@i.Location</td>
+             <td>@i.Number_of_Rooms</td>
+             <td>@i.Floor_Area</td>
+             <td>@i.Land_Area</td>
+             <td>@i.RV</td>
+             <td>@i.Email</td>
+             <td>@i.Property_Type</td>
+
+
+         </tr> }
+
+
+
+</table>
+

@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<br />
+<br />
+<br />
+<h2>Seller Registration</h2>
+
+
+
+<form method="post" action="~/Seller/reg">
+    Frist name:<input type="text" name="Frist_name" /> <br />
+    Last name:<input type="text" name="Last_name" /> <br />
+    Address:<input type="text" name="Address" /> <br />
+    Phone number:<input type="text" name="Phone_number" /> <br />
+    Email address:<input type="text" name="Email_address" /> <br />
+    <input type="submit" />
+</form>
+
+<form method="post" action="~/Seller/upd">
+    ID:<input type="text" name="ID" /> <br />
+    Address:<input type="text" name="Address" /> <br />
+    Email address:<input type="text" name="Email_address" /> <br />
+    <input type="submit" />
+</form>
+

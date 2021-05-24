@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+    <link href="~/Style/StyleSheet1.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="header">
+        <h1 style="text-align:center;">Online Real Estate</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-12 menu">
+
+            <a href="~/home/index">Homepage</a>
+            <a href="~/Property/index">Property</a>
+            <a href="~/Search/index">Search</a>
+            <a href="~/Seller/index">Seller</a>
+
+        </div>
+        @RenderBody();
+
+
+    </div>
+
+    <div class="header">
+        <h1 style="text-align:center;">Thanks for Visiting Online Real Estate</h1>
+    </div>
+
+</body>
+</html>
+

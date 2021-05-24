@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Database1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Property">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Suburb" Type="varchar" MaxLength="30" />
+          <Property Name="Location" Type="varchar" MaxLength="30" />
+          <Property Name="Number_of_Rooms" Type="varchar" MaxLength="30" />
+          <Property Name="Property_Type" Type="varchar" MaxLength="30" />
+          <Property Name="Floor_Area" Type="varchar" MaxLength="30" />
+          <Property Name="Land_Area" Type="varchar" MaxLength="30" />
+          <Property Name="RV" Type="varchar" MaxLength="30" />
+          <Property Name="Email" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Seller">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Frist name" Type="varchar" MaxLength="30" />
+          <Property Name="Last name" Type="varchar" MaxLength="20" />
+          <Property Name="Address" Type="varchar" MaxLength="20" />
+          <Property Name="Phone number" Type="varchar" MaxLength="10" />
+          <Property Name="Email address" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityContainer Name="Database1ModelStoreContainer">
+          <EntitySet Name="Property" EntityType="Self.Property" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Seller" EntityType="Self.Seller" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Database1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Seller">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Frist_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Last_name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Phone_number" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Email_address" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Property">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Suburb" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Location" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Number_of_Rooms" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Floor_Area" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Land_Area" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="RV" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Property_Type" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="Database1Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Sellers" EntityType="Self.Seller" />
+          <EntitySet Name="Properties" EntityType="Self.Property" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities">
+          <EntitySetMapping Name="Sellers">
+            <EntityTypeMapping TypeName="Database1Model.Seller">
+              <MappingFragment StoreEntitySet="Seller">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Frist_name" ColumnName="Frist name" />
+                <ScalarProperty Name="Last_name" ColumnName="Last name" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Phone_number" ColumnName="Phone number" />
+                <ScalarProperty Name="Email_address" ColumnName="Email address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Properties">
+            <EntityTypeMapping TypeName="Database1Model.Property">
+              <MappingFragment StoreEntitySet="Property">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Suburb" ColumnName="Suburb" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+				  <ScalarProperty Name="Number_of_Rooms" ColumnName="Number_of_Rooms" />
+				  <ScalarProperty Name="Floor_Area" ColumnName="Floor_Area" />
+				  <ScalarProperty Name="Land_Area" ColumnName="Land_Area" />
+				  <ScalarProperty Name="Property_Type" ColumnName="Property_Type" />
+				  <ScalarProperty Name="RV" ColumnName="RV" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

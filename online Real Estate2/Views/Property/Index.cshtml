@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<br />
+<br />
+<br />
+<h1>Property  Details</h1>
+<table class="table">
+    <tr>
+        <th> Suburb </th>
+        <th> Location </th>
+        <th> Number of Rooms </th>
+        <th> Floor Area </th>
+        <th> Land Area </th>
+        <th> RV </th>
+        <th> Email </th>
+        <th> Property Type </th>
+    </tr>
+    @foreach (var i in Model)
+    { <tr>
+          <td>@i.Suburb</td>
+          <td>@i.Location</td>
+          <td>@i.Number_of_Rooms</td>
+          <td>@i.Floor_Area</td>
+          <td>@i.Land_Area</td>
+          <td>@i.RV</td>
+          <td>@i.Email</td>
+          <td>@i.Property_Type</td>
+
+</tr> 
+    }
+</table>
+
+
+
+
+
+
+
+
+<h2>Add Property</h2>
+
+
+
+<form method="post" action="~/Property/reg2">
+    Suburb:<input type="text" name="Suburb" /> <br />
+    Location:<input type="text" name="Location" /> <br />
+    Number of Rooms:<input type="text" name="Number_of_Rooms" /> <br />
+    Floor Area:<input type="text" name="Floor_Area" /> <br />
+    Land Area:<input type="text" name="Land_Area" /> <br />
+    RV:<input type="text" name="RV" /> <br />
+    Email:<input type="text" name="Email" /> <br />
+    Property Type:<input type="text" name="Property_Type"/> <br />
+    <input type="submit" />
+
+</form>
+
+<h3>Delete Property</h3>
+
+    <form method="GET" action="~/Property/del">
+        ID:<input type="text" name="ID" /> <br />
+        <input type="submit"/>
+
+
+    </form>
+
+
+
+
