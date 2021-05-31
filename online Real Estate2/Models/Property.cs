@@ -23,5 +23,6 @@ namespace online_Real_Estate2.Models
         public string RV { get; set; }
         public string Email { get; set; }
         public string Property_Type { get; set; }
+        public string SellerId { get; set; }
     }
 }

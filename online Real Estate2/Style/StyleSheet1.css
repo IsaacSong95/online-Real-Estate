@@ -91,32 +91,147 @@ body {
 
 
 .header {
-    background-color: #9933cc;
-    color: #ffffff;
-    padding: 15px;
+    background-color: #1abc9c;
+    color: white;
+    padding: 5px;
+}
+
+.header h1{
+    font-size:25px;
 }
 
 
 .menu {
     overflow: hidden;
-    background-color: gray;
+    background-color: #333;
+    text-align:center;
 }
 
 
     .menu a {
         float: left;
         display: block;
-        color: #f2f2f2;
+        color: white;
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
     }
+        .menu a.right {
+            float:right;
+        }
 
         .menu a:hover {
-            background-color: #0099cc;
+            background-color: #ddd;
+            color:black;
         }
 
 img {
     max-width: 100%;
     height: auto;
 }
+
+p{
+    text-align:center;
+    
+}
+
+
+.row {
+    display: -ms-flexbox; 
+    display: flex;
+    -ms-flex-wrap: wrap; 
+    flex-wrap: wrap;
+}
+
+
+.side {
+    -ms-flex: 30%; 
+    flex: 30%;
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+
+.main {
+    -ms-flex: 70%; 
+    flex: 70%;
+    background-color: white;
+    padding: 20px;
+}
+
+
+.fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+}
+
+
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+}
+
+@media screen and (max-width: 700px) {
+    .row {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .navbar a {
+        float: none;
+        width: 100%;
+    }
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+    input[type=text]:focus {
+        width: 100%;
+    }

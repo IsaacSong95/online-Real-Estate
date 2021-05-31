@@ -3,70 +3,169 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutPage1.cshtml";
 }
+<div class="row" style="display:inline">
+    <br />
+    <br />
+    <br />
+    <h1>Property  Details</h1>
+    <br />
+    <table class="table">
+        <tr>
+            <th> Suburb </th>
+            <th> Location </th>
+            <th> Number of Rooms </th>
+            <th> Floor Area </th>
+            <th> Land Area </th>
+            <th> RV </th>
+            <th> Email </th>
+            <th> Property Type </th>
+        </tr>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@i.Suburb</td>
+                <td>@i.Location</td>
+                <td>@i.Number_of_Rooms</td>
+                <td>@i.Floor_Area</td>
+                <td>@i.Land_Area</td>
+                <td>@i.RV</td>
+                <td>@i.Email</td>
+                <td>@i.Property_Type</td>
 
-<br />
-<br />
-<br />
-<h1>Property  Details</h1>
-<table class="table">
-    <tr>
-        <th> Suburb </th>
-        <th> Location </th>
-        <th> Number of Rooms </th>
-        <th> Floor Area </th>
-        <th> Land Area </th>
-        <th> RV </th>
-        <th> Email </th>
-        <th> Property Type </th>
-    </tr>
-    @foreach (var i in Model)
-    { <tr>
-          <td>@i.Suburb</td>
-          <td>@i.Location</td>
-          <td>@i.Number_of_Rooms</td>
-          <td>@i.Floor_Area</td>
-          <td>@i.Land_Area</td>
-          <td>@i.RV</td>
-          <td>@i.Email</td>
-          <td>@i.Property_Type</td>
+            </tr>
 
-</tr> 
-    }
-</table>
-
-
-
-
-
-
-
-
-<h2>Add Property</h2>
+        }
+    </table>
+    <br />
 
 
 
-<form method="post" action="~/Property/reg2">
-    Suburb:<input type="text" name="Suburb" /> <br />
-    Location:<input type="text" name="Location" /> <br />
-    Number of Rooms:<input type="text" name="Number_of_Rooms" /> <br />
-    Floor Area:<input type="text" name="Floor_Area" /> <br />
-    Land Area:<input type="text" name="Land_Area" /> <br />
-    RV:<input type="text" name="RV" /> <br />
-    Email:<input type="text" name="Email" /> <br />
-    Property Type:<input type="text" name="Property_Type"/> <br />
-    <input type="submit" />
 
-</form>
+    <h2>Add Property</h2>
+    <br />
 
-<h3>Delete Property</h3>
+    <table class="table">
+        <form method="post" action="~/Property/reg2">
+            <tr>
+                <td>Suburb:</td>
+                <td><input type="text" name="Suburb" /> </td>
+            </tr>
+            <tr>
+                <td>
+                    Location:
+                </td>
+                <td>
+                    <input type="text" name="Location" />
+                </td>
+            </tr>
+            <tr>
+                <td>Number of Rooms:</td>
+                <td>
+                    <input type="text" name="Number_of_Rooms" />
+                </td>
+            </tr>
+            <tr>
+                <td>Floor Area:</td>
+                <td>
+                    <input type="text" name="Floor_Area" />
+                </td>
+            </tr>
+            <tr>
+                <td>Land Area:</td>
+                <td>
+                    <input type="text" name="Land_Area" />
+                </td>
+            </tr>
+            <tr>
+                <td>RV:</td>
+                <td>
+                    <input type="text" name="RV" />
+                </td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td>
+                    <input type="text" name="Email" />
+                </td>
+            </tr>
+            <tr>
+                <td>Property Type:</td>
+                <td>
+                    <input type="text" name="Property_Type" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" />
+                </td>
+            </tr>
+            
 
-    <form method="GET" action="~/Property/del">
-        ID:<input type="text" name="ID" /> <br />
-        <input type="submit"/>
+        </form>
+    </table>
+    <br />
+    <h3>Delete Property</h3>
+    <br />
+    <form method="post" action="~/Property/del">
+        <tr>
+            <td>Property Id:</td>
+            <td><input type="text" name="Id" /> </td>
+        </tr>
+        <tr>
 
+        <tr>
+            <td>Seller Id:</td>
+            <td><input type="text" name="SellerId" /> </td>
+        </tr>
+        <tr>
+        <tr>
+            <td><input type="submit" /></td>
+        </tr>
+        <tr>
+
+
+           
 
     </form>
 
 
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+</div>
 
 

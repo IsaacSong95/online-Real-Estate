@@ -32,11 +32,13 @@ namespace online_Real_Estate2.Controllers
             catch { return "invalid"; }
         }
 
-        public string del(int ID)
+        public string del(int Id, string SellerId)
         {
             Database1Entities db = new Database1Entities();
-            Property em = db.Properties.Find(ID);
-            db.Properties.Remove(em);
+            //Property em = db.Properties.Find(Id);
+            //db.Properties.Remove(em);
+            var em = db.Properties.Where(s => s.Id == Id && s.SellerId.Equals(SellerId));
+            db.Properties.RemoveRange(em);
             db.SaveChanges();
             return "DONE";
         }

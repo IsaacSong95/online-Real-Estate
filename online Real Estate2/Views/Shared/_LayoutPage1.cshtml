@@ -8,13 +8,14 @@
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.8.3.js"></script>
+    <link rel="stylesheet" type="text/css" href='site.css?v=<%= DateTime.Now.Ticks %>' />
     <link href="~/Style/StyleSheet1.css" rel="stylesheet" />
 </head>
-
 <body>
     <div class="header">
         <h1 style="text-align:center;">Online Real Estate</h1>
     </div>
+
 
     <div class="row">
         <div class="col-12 menu">
@@ -23,6 +24,7 @@
             <a href="~/Property/index">Property</a>
             <a href="~/Search/index">Search</a>
             <a href="~/Seller/index">Seller</a>
+            <a href="#" class="right">Login</a>
 
         </div>
         @RenderBody();

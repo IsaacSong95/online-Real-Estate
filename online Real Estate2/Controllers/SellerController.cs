@@ -21,18 +21,30 @@ namespace online_Real_Estate2.Controllers
         {
             try
             {
-                Database1Entities db = new Database1Entities();
-                db.Sellers.Add(model);
-                db.SaveChanges();
-                return "Done";
+                if (ModelState.IsValid)
+                {
+
+                    Database1Entities db = new Database1Entities();
+                    db.Sellers.Add(model);
+                    db.SaveChanges();
+                    return "Done";
+                } 
+                else
+                {
+                    return "invaild";
+                }
+                
             }
-            catch { return "invaild"; }
+            catch
+            { 
+                return "error"; 
+            }
         }
-        public string upd(int ID, string email , string address)
+        public string upd(int ID, string Email_address, string address)
         {
             Database1Entities db = new Database1Entities();
             var se = db.Sellers.First(a => a.Id == ID);
-            se.Email_address = email;
+            se.Email_address = Email_address;
             se.Address = address;
             db.SaveChanges();
 
