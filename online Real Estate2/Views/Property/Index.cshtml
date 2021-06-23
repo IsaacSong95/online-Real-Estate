@@ -4,6 +4,11 @@
     Layout = "~/Views/Shared/_LayoutPage1.cshtml";
 }
 <div class="row" style="display:inline">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+
     <br />
     <br />
     <br />
@@ -43,66 +48,9 @@
 
     <h2>Add Property</h2>
     <br />
-
-    <table class="table">
-        <form method="post" action="~/Property/reg2">
-            <tr>
-                <td>Suburb:</td>
-                <td><input type="text" name="Suburb" /> </td>
-            </tr>
-            <tr>
-                <td>
-                    Location:
-                </td>
-                <td>
-                    <input type="text" name="Location" />
-                </td>
-            </tr>
-            <tr>
-                <td>Number of Rooms:</td>
-                <td>
-                    <input type="text" name="Number_of_Rooms" />
-                </td>
-            </tr>
-            <tr>
-                <td>Floor Area:</td>
-                <td>
-                    <input type="text" name="Floor_Area" />
-                </td>
-            </tr>
-            <tr>
-                <td>Land Area:</td>
-                <td>
-                    <input type="text" name="Land_Area" />
-                </td>
-            </tr>
-            <tr>
-                <td>RV:</td>
-                <td>
-                    <input type="text" name="RV" />
-                </td>
-            </tr>
-            <tr>
-                <td>Email:</td>
-                <td>
-                    <input type="text" name="Email" />
-                </td>
-            </tr>
-            <tr>
-                <td>Property Type:</td>
-                <td>
-                    <input type="text" name="Property_Type" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="submit" />
-                </td>
-            </tr>
-            
-
-        </form>
-    </table>
+    @Html.ActionLink("Add", "Index", "Login")
+    <br />
+    <br />
     <br />
     <h3>Delete Property</h3>
     <br />
@@ -124,12 +72,17 @@
         <tr>
 
 
-           
+
 
     </form>
-
-
     <br />
+    <br />
+    <br />
+    <br />
+
+    @Html.ActionLink("Go to Search", "Index", "Search")
+
+
     <br />
     <br />
     <br />

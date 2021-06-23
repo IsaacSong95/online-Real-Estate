@@ -11,14 +11,29 @@ namespace online_Real_Estate2.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Seller
     {
         public int Id { get; set; }
+
+        [Required(ErrorMessage = "Frist name is required"), MinLength(3), MaxLength(10)]
         public string Frist_name { get; set; }
+
+        [StringLength(10, ErrorMessage = "Your last name is too long")]
+        [Required(ErrorMessage = "Last name is required")]
+
         public string Last_name { get; set; }
+
+        [Required(ErrorMessage = "Address is required"), MinLength(3), MaxLength(50)]
         public string Address { get; set; }
+
+        [Required(ErrorMessage = "Phone number is required"), MinLength(8), MaxLength(12)]
         public string Phone_number { get; set; }
+
+        [Required(ErrorMessage ="Email is required")]
+        [StringLength(20, ErrorMessage ="Do not enter more than 20 characters")]
+        [RegularExpression(@"^[a-zA-Z0-9]+@[a-zA-Z0-9]+(\.[a-zA-Z]+)*$",ErrorMessage = "Email is not valid")]
         public string Email_address { get; set; }
     }
 }

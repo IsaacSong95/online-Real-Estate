@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using online_Real_Estate2.Models;
+using System.Data.Entity.Validation;
 
 namespace online_Real_Estate2.Controllers
 {
@@ -15,8 +16,9 @@ namespace online_Real_Estate2.Controllers
         public ActionResult Index()
         {
             return View();
-        }
 
+        }
+        [HttpPost]
         public string reg(Seller model)
         {
             try
@@ -40,16 +42,15 @@ namespace online_Real_Estate2.Controllers
                 return "error"; 
             }
         }
-        public string upd(int ID, string Email_address, string address)
+        public string upd(int ID, string address, string Email_address)
         {
             Database1Entities db = new Database1Entities();
             var se = db.Sellers.First(a => a.Id == ID);
-            se.Email_address = Email_address;
             se.Address = address;
-            db.SaveChanges();
+            se.Email_address = Email_address;
 
             return "Done";
-            
+
         }
 
     }

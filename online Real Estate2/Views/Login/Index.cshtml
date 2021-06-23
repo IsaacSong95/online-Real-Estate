@@ -1,39 +1,91 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Add";
     Layout = "~/Views/Shared/_LayoutPage1.cshtml";
 }
 
-
-<head>
-    <title>Login</title>
-</head>
-
-<body>
-    <div id="login-div">
-        @using (Html.BeginForm(FormMethod.Post))
-            {
-                <table>
-                    <tr>
-                        <td></td>
-                        <td style="text-decoration:underline">App Name</td>
-
-                    </tr>
-                    <tr>
-                        <td>
-                            @*@Html.LabelFor(model => model.UserName)*@
-                        </td>
-                        <td>
-                            @*@Html.EditorFor(model => model.UserName)*@
-                        </td>
-                    </tr>
-                </table>
-            }
+@model online_Real_Estate2.Models.Property
+<div class="row" style="display:inline">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
 
 
-    </div>
+    <h2>Add Property</h2>
+    <br />
 
-</body>
+    @using (Html.BeginForm("reg2", "Property", FormMethod.Post))
 
+    {
 
+        @Html.AntiForgeryToken()
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" });
+
+<table class="table">
+
+    <tr>
+        <td>@Html.Label("Suburb", "Suburb:") </td>
+        <td>@Html.TextBox("Suburb", null, new { @class = "form-control" })</td>
+        <td>@Html.ValidationMessage("Suburb", "", new { @class = "text-danger" })</td>
+    </tr>
+    <tr>
+        <td>@Html.Label("Location", "Location:") </td>
+        <td>@Html.TextBox("Location", null, new { @class = "form-control" })</td>
+        <td>@Html.ValidationMessage("Location", "", new { @class = "text-danger" })</td>
+    </tr>
+    <tr>
+        <td>@Html.Label("Number_of_Rooms", "Number of Rooms:") </td>
+        <td>@Html.TextBox("Number_of_Rooms", null, new { @class = "form-control" })</td>
+        <td>@Html.ValidationMessage("Number_of_Rooms", "", new { @class = "text-danger" })</td>
+    </tr>
+    <tr>
+        <td>@Html.Label("Floor_Area", "Floor Area:") </td>
+        <td>@Html.TextBox("Floor_Area", null, new { @class = "form-control" })</td>
+        <td>@Html.ValidationMessage("Floor_Area", "", new { @class = "text-danger" })</td>
+    </tr>
+    <tr>
+        <td>@Html.Label("Land_Area", "Land Area:") </td>
+        <td>@Html.TextBox("Land_Area", null, new { @class = "form-control" })</td>
+        <td>@Html.ValidationMessage("Land_Area", "", new { @class = "text-danger" })</td>
+    </tr>
+
+    <tr>
+        <td>@Html.Label("RV", "RV:") </td>
+        <td>@Html.TextBox("RV", null, new { @class = "form-control" })</td>
+        <td>@Html.ValidationMessage("RV", "", new { @class = "text-danger" })</td>
+    </tr>
+
+    <tr>
+        <td>@Html.Label("Email", "Email:") </td>
+        <td>@Html.TextBox("Email", null, new { @class = "form-control" })</td>
+        <td>@Html.ValidationMessage("Email", "", new { @class = "text-danger" })</td>
+    </tr>
+    <tr>
+        @Html.LabelFor(m => m.Email, new { @class = "form-control" })
+        @Html.PasswordFor(m => m.RV, new { @class = "form-control" })
+        @Html.EditorFor(m => m.Floor_Area)
+    </tr>
+
+    <tr>
+        <td>@Html.Label("Property_Type", "Property Type:") </td>
+        <td>@Html.TextBox("Property_Type", null, new { @class = "form-control" })</td>
+        <td>@Html.ValidationMessage("Property_Type", "", new { @class = "text-danger" })</td>
+    </tr>
+    <tr>
+        <td>
+            <input type="submit" />
+        </td>
+    </tr>
+</table>
+
+    }
+    </br>
+    </br>
+    @Html.ActionLink("Go to Property Details", "Index", "Property")
+    </br>
+    </br>
+    </br>
+    </br>
+</div>
 

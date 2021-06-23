@@ -11,17 +11,39 @@ namespace online_Real_Estate2.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Property
     {
         public int Id { get; set; }
+
+        [Required(ErrorMessage = "Suburb is required")]
         public string Suburb { get; set; }
+
+        [Required(ErrorMessage = "Location is required")]
         public string Location { get; set; }
+
+        [Required(ErrorMessage = "Number of Rooms is required")]
+        [RegularExpression(@"^[0-9]*$", ErrorMessage = "Please only enter number")]
         public string Number_of_Rooms { get; set; }
+
+        [Required(ErrorMessage = "Floor Area is required")]
         public string Floor_Area { get; set; }
+
+        [Required(ErrorMessage = "Land Area is required")]
+        [StringLength(30, MinimumLength = 2, ErrorMessage = "Please enter the correct land area")]
         public string Land_Area { get; set; }
+
+        [Required(ErrorMessage = "RV is required")]
+        [RegularExpression(@"^[0-9]*$", ErrorMessage = "Please only enter number")]
         public string RV { get; set; }
+
+        [Required(ErrorMessage = "Email is required")]
+        [StringLength(20, ErrorMessage = "Do not enter more than 20 characters")]
+        [RegularExpression(@"^[a-zA-Z0-9]+@[a-zA-Z0-9]+(\.[a-zA-Z]+)*$", ErrorMessage = "Email is not valid")]
         public string Email { get; set; }
+
+        [Required(ErrorMessage = "Property Type is required")]
         public string Property_Type { get; set; }
         public string SellerId { get; set; }
     }

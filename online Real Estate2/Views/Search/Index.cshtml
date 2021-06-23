@@ -3,57 +3,82 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutPage1.cshtml";
 }
+@model online_Real_Estate2.Models.Property
 <div class="row" style="display:inline">
-    <form method="post" action="~/Search/se">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
 
-        <tr>
-            <td>Locaiton:</td>
-            <td><input type="text" placeholder="search.." name="Location" /> </td>
-        </tr>
-        <tr>
-        <tr>
-            <td> Property Type:</td>
-            <td><input type="text" placeholder="search.." name="Property_Type" /> </td>
-        </tr>
-        <tr>
-        <tr>
-            <td><input type="submit" /> </td>
-        </tr>
-        <tr>
 
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <div class="loader"></div>
-    </form>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-</div>
+    @using (Html.BeginForm("se", "Search", FormMethod.Post))
+
+    {
+        @Html.AntiForgeryToken()
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" });
+
+        <table class="table">
+
+            <tr>
+                <td>@Html.Label("Suburb", "Suburb:") </td>
+                <td>@Html.TextBox("Suburb", null, new { @class = "form-control" })</td>
+                <td>@Html.ValidationMessage("Suburb", "", new { @class = "text-danger" })</td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Property_Type", "Property Type:") </td>
+                <td>@Html.TextBox("Property_Type")</td>
+                <td>@Html.ValidationMessage("Property_Type", "", new { @class = "text-danger" })</td>
+
+            </tr>
+            <tr>
+                <td><input type="submit" /> </td>
+            </tr>
+            <tr>
+
+       </table>
+
+    }
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+
+
+                <div class="loader"></div>
+
+
+                <br />
+                <br />
+                <br />
+                <br />
+                @Html.ActionLink("Go to Property", "Index", "Property")
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+    </div>
